@@ -10,6 +10,7 @@ class DBHelper {
           'CREATE TABLE user_places(id TEXT PRIMIRY KEY, title TEXT, image TEXT)');
     }, version: 1);
   }
+  
   static Future<void> insert(String table, Map<String, Object> data) async {
     final db = await DBHelper.database();
     db.insert(table, data, conflictAlgorithm: sql.ConflictAlgorithm.replace);
